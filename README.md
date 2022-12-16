@@ -7,8 +7,8 @@ This is a challenge that consists in creating code for analyzing the financial r
 
 ## Usage 
 
-Follow the [link](https://willguille.github.io/Bootstrap-Portfolio/) to see the final result of the code refactor.
-![Screenshot of the deployed website](images/screenshot-web-final.png)
+Follow the [link](https://willguille.github.io/console-finances/) and open the console to see the result!
+![Screenshot of the deployed website](images/screenshot-console.png)
 
 ## License
 
