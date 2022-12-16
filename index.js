@@ -86,3 +86,59 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// Calculate the total number of months included in the dataset
+var totalMonths = finances.length;
+
+// Calculate the net total amount of Profit/Losses over the entire period
+var totalProfitLoss = 0;
+for (var i = 0; i < finances.length; i++) {
+  totalProfitLoss += finances[i][1];
+}
+
+// Calculate the average of the changes in Profit/Losses over the entire period
+var totalChange = 0;
+var previousProfitLoss = finances[0][1];
+for (var i = 1; i < finances.length; i++) {
+  var currentProfitLoss = finances[i][1];
+  totalChange += currentProfitLoss - previousProfitLoss;
+  previousProfitLoss = currentProfitLoss;
+}
+var averageChange = totalChange / totalMonths;
+averageChange = averageChange.toFixed(2);
+
+// Find the greatest increase in profits (date and amount) over the entire period
+var greatestIncrease = ["", Number.NEGATIVE_INFINITY];
+previousProfitLoss = finances[0][1];
+for (var i = 1; i < finances.length; i++) {
+  var currentProfitLoss = finances[i][1];
+  var currentIncrease = currentProfitLoss - previousProfitLoss;
+
+// Find the greatest increase in profits (date and amount) over the entire period
+var greatestIncrease = ["", Number.NEGATIVE_INFINITY];
+previousProfitLoss = finances[0][1];
+for (var i = 1; i < finances.length; i++) {
+  var currentProfitLoss = finances[i][1];
+  var currentIncrease = currentProfitLoss - previousProfitLoss;
+  if (currentIncrease > greatestIncrease[1]) {
+    greatestIncrease = [finances[i][0], currentIncrease];
+  }
+  previousProfitLoss = currentProfitLoss;
+}
+// Find the greatest decrease in losses (date and amount) over the entire period
+var greatestDecrease = ["", Number.POSITIVE_INFINITY];
+previousProfitLoss = finances[0][1];
+for (var i = 1; i < finances.length; i++) {
+  var currentProfitLoss = finances[i][1];
+  var currentDecrease = currentProfitLoss - previousProfitLoss;
+  if (currentDecrease < greatestDecrease[1]) {
+    greatestDecrease = [finances[i][0], currentDecrease];
+  }
+  previousProfitLoss = currentProfitLoss;
+}
+// Output the results to the console
+console.log("Total number of months: " + totalMonths);
+console.log("Total profit/loss: " + totalProfitLoss);
+console.log("Average change in profit/loss: " + averageChange);
+console.log("Greatest increase in profits: " + greatestIncrease[0] + " (" + greatestIncrease[1] + ")");
+console.log("Greatest decrease in losses: " + greatestDecrease[0] + " (" + greatestDecrease[1] + ")");}
