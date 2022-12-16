@@ -137,6 +137,8 @@ for (var i = 1; i < finances.length; i++) {
   previousProfitLoss = currentProfitLoss;
 }
 // Output the results to the console
+console.log("Financial Analysis");
+console.log("----------------------------")
 console.log("Total number of months: " + totalMonths);
 console.log("Total profit/loss: $" + totalProfitLoss);
 console.log("Average change in profit/loss: $" + averageChange);
