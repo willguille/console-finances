@@ -138,7 +138,7 @@ for (var i = 1; i < finances.length; i++) {
 }
 // Output the results to the console
 console.log("Total number of months: " + totalMonths);
-console.log("Total profit/loss: " + totalProfitLoss);
-console.log("Average change in profit/loss: " + averageChange);
-console.log("Greatest increase in profits: " + greatestIncrease[0] + " (" + greatestIncrease[1] + ")");
-console.log("Greatest decrease in losses: " + greatestDecrease[0] + " (" + greatestDecrease[1] + ")");}
+console.log("Total profit/loss: $" + totalProfitLoss);
+console.log("Average change in profit/loss: $" + averageChange);
+console.log("Greatest increase in profits: " + greatestIncrease[0] + " ($" + greatestIncrease[1] + ")");
+console.log("Greatest decrease in losses: " + greatestDecrease[0] + " ($" + greatestDecrease[1] + ")");}
